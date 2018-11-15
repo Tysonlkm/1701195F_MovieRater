@@ -88,12 +88,11 @@ class MainActivity : AppCompatActivity() {
             val toastMovie = Toast.makeText(this, title + "\n" + Desc + "\n" + Date + "\n" + Lang + "\n" + Rating + "\n" + "Reason: " + "\n" + vl + "\n" + langUsed, Toast.LENGTH_LONG)
             toastMovie.show()
 
-            val movieIntent = Intent(applicationContext, DisplayMovie::class.java)
             val movieTitle = inputMovieName.text.toString()
             val movieDesc= inputMovieDesc.text.toString()
-
             val movieRecommend = "Yes"
-
+            
+            val movieIntent = Intent(applicationContext, DisplayMovie::class.java)
             movieIntent.putExtra("movieTitle", movieTitle)
             movieIntent.putExtra("movieDesc", movieDesc)
             movieIntent.putExtra("moveDate",inputReleaseDate.text.toString())
