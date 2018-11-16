@@ -17,11 +17,11 @@ class DisplayMovie : AppCompatActivity() {
         val movieLan = bundle!!.getString("movieLang")
         val movieRecommend = bundle!!.getString("movieRecommend")
 
-        DisplayMovieName.text = movieTitle
-        DisplayMovieDesc.text = movieDesc
-        DisplayMovieLang.text = movieLan
-        DisplayMovieRelease.text = movieDate
-        DisplaySuitableAge.text = movieRecommend
+        DisplayMovieName.text = movieTitle + "\n"
+        DisplayMovieDesc.text = movieDesc + "\n"
+        DisplayMovieLang.text = movieLan +"\n"
+        DisplayMovieRelease.text = movieDate +"\n"
+        DisplaySuitableAge.text = movieRecommend +"\n"
 
 
     }

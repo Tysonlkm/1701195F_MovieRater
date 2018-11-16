@@ -18,6 +18,7 @@
             android:id="@+id/inputMovieName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/etMovieTitle"
             android:inputType="text"/>
 
     <TextView
@@ -30,6 +31,7 @@
             android:id="@+id/inputMovieDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/etMovieDesc"
             android:inputType="textMultiLine"/>
     <TextView
             android:id="@+id/movieLang"
@@ -74,6 +76,7 @@
             android:id="@+id/inputReleaseDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/etMovieRelease"
             android:inputType="date"/>
 
     <CheckBox
@@ -92,12 +95,14 @@
                 android:id="@+id/chkboxMovieVl"
                 android:visibility="gone"
                 android:text="@string/vl"/>
+
         <CheckBox
                 android:id="@+id/chkboxMovielangUsed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:text="@string/langUsed"/>
+
     </LinearLayout>
 
     <Button
