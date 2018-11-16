@@ -93,23 +93,23 @@ class MainActivity : AppCompatActivity() {
         val Lang = "Language = " + movieLang
         val Rating = "Suitable for all ages = " + movieRating
         val toastMovie = Toast.makeText(this, title + "\n" + Desc + "\n" + Date + "\n" + Lang + "\n" + Rating + "\n" + "Reason: " + "\n" + vl + "\n" + langUsed, Toast.LENGTH_LONG)
-        toastMovie.show()
-
-        val nextActivity = Timer()
-        nextActivity.schedule(5000){
-            val movieRecommend = "Yes"
-            val movieTitle = inputMovieName.text.toString()
-            val movieDesc= inputMovieDesc.text.toString()
-            val movieReleaseDate = inputReleaseDate.text.toString()
-            val movieIntent = Intent(applicationContext, DisplayMovie::class.java)
-            movieIntent.putExtra("movieTitle", movieTitle)
-            movieIntent.putExtra("movieDesc", movieDesc)
-            movieIntent.putExtra("movieReleaseDate",movieReleaseDate)
-            movieIntent.putExtra("movieLang", movieLang)
-            movieIntent.putExtra("movieRecommend",movieRecommend)
-            startActivity(movieIntent)
+        if(inputMovieName.text.isNotEmpty()&& inputMovieDesc.text.isNotEmpty()&&inputReleaseDate.text.isNotEmpty()&& movieRating=="true"){
+            toastMovie.show()
+            val nextActivity = Timer()
+            nextActivity.schedule(3500){
+                val movieRecommend ="Yes"
+                val movieTitle = inputMovieName.text.toString()
+                val movieDesc= inputMovieDesc.text.toString()
+                val movieReleaseDate = inputReleaseDate.text.toString()
+                val movieIntent = Intent(applicationContext, DisplayMovie::class.java)
+                movieIntent.putExtra("movieTitle", movieTitle)
+                movieIntent.putExtra("movieDesc", movieDesc)
+                movieIntent.putExtra("movieReleaseDate",movieReleaseDate)
+                movieIntent.putExtra("movieLang", movieLang)
+                movieIntent.putExtra("movieRecommend",movieRecommend)
+                startActivity(movieIntent)
+            }
         }
-
     }
 
 }
