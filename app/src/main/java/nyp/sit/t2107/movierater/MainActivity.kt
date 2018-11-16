@@ -19,11 +19,17 @@ class MainActivity : AppCompatActivity() {
         chkboxMovieRating.setOnClickListener{
             if(chkboxMovieRating.isChecked){
                 chkboxMovieVl.visibility = View.VISIBLE
+                chkboxMovieVl.isEnabled = true
                 chkboxMovielangUsed.visibility = View.VISIBLE
+                chkboxMovielangUsed.isEnabled = true
             }
             else {
                 chkboxMovieVl.visibility = View.GONE
+                chkboxMovieVl.isEnabled=false
+                chkboxMovieVl.isChecked = false
                 chkboxMovielangUsed.visibility = View.GONE
+                chkboxMovielangUsed.isEnabled = false
+                chkboxMovielangUsed.isChecked = false
             }
         }
 
@@ -95,8 +101,8 @@ class MainActivity : AppCompatActivity() {
         val toastMovie = Toast.makeText(this, title + "\n" + Desc + "\n" + Date + "\n" + Lang + "\n" + Rating + "\n" + "Reason: " + "\n" + vl + "\n" + langUsed, Toast.LENGTH_LONG)
         if(inputMovieName.text.isNotEmpty()&& inputMovieDesc.text.isNotEmpty()&&inputReleaseDate.text.isNotEmpty()&& movieRating=="true"){
             toastMovie.show()
-            val nextActivity = Timer()
-            nextActivity.schedule(3500){
+            val nextActivityShow = Timer()
+            nextActivityShow.schedule(3500){
                 val movieRecommend ="Yes"
                 val movieTitle = inputMovieName.text.toString()
                 val movieDesc= inputMovieDesc.text.toString()

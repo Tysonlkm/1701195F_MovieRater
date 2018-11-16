@@ -81,18 +81,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/movieType"/>
-    <CheckBox
-            android:id="@+id/chkboxMovieVl"
+
+    <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:text="@string/vl"/>
-    <CheckBox
-            android:id="@+id/chkboxMovielangUsed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:text="@string/langUsed"/>,
+            android:orientation="horizontal">
+        <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/chkboxMovieVl"
+                android:visibility="gone"
+                android:text="@string/vl"/>
+        <CheckBox
+                android:id="@+id/chkboxMovielangUsed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="@string/langUsed"/>
+    </LinearLayout>
 
     <Button
             android:id="@+id/btnText"
