@@ -1,5 +1,6 @@
 package nyp.sit.t2107.movierater
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 
 import android.os.Bundle
@@ -24,5 +25,12 @@ class DisplayMovie : AppCompatActivity() {
         DisplaySuitableAge.text = movieRecommend +"\n"
 
 
+
+        btnRateMovie.setOnClickListener(){
+            val movieNameReview = movieTitle
+            val movieRating = Intent(applicationContext,movie_review::class.java)
+            movieRating.putExtra("movieNameReview", movieNameReview)
+            startActivity(movieRating)
+        }
     }
 }

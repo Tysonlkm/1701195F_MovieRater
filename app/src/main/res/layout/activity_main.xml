@@ -48,7 +48,7 @@
                 android:id="@+id/english_radiobtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/eng_lang"/>
+                android:text="@string/eng_lang" android:checked="true"/>
         <RadioButton
                 android:id="@+id/chinese_radiobtn"
                 android:layout_width="match_parent"

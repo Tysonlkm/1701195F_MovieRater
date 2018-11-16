@@ -20,6 +20,7 @@
     <string name="Lang">Language:</string>
     <string name="Release">Release Date:</string>
     <string name="Age">Suitable for children below 13:</string>
+    <string name="btnRate">Rate the movie</string>
     <string name="DetailRating">Share your view on the show</string>
 
 </resources>

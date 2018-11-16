@@ -6,12 +6,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".MovieRating">
+        tools:context=".movie_review">
     <TextView
             android:id="@+id/reviewMovieName"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Enter Your review for movie: Venom"/>
+            android:layout_height="wrap_content"/>
     <RatingBar
             android:id="@+id/movieRating"
             android:layout_width="wrap_content"
@@ -21,5 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/DetailRating"/>
+
 
 </LinearLayout>

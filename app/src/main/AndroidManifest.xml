@@ -16,14 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".DisplayMovie">
-        </activity>
-        <activity android:name=".MovieRating">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+        <activity android:name=".DisplayMovie"/>
+        <activity android:name=".movie_review">
         </activity>
     </application>
 
