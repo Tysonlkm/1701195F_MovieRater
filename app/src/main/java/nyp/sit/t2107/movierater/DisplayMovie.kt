@@ -27,9 +27,8 @@ class DisplayMovie : AppCompatActivity() {
 
 
         btnRateMovie.setOnClickListener(){
-            val movieNameReview = movieTitle
             val movieRating = Intent(applicationContext,movie_review::class.java)
-            movieRating.putExtra("movieNameReview", movieNameReview)
+            movieRating.putExtra("movieNameReview", movieTitle)
             startActivity(movieRating)
         }
     }
