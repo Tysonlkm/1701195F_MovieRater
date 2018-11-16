@@ -86,7 +86,7 @@ class MainActivity : AppCompatActivity() {
 
         var langUsed = ""
         if(chkboxMovielangUsed.isChecked){
-            langUsed = "Language"
+            langUsed = "Foul Language"
         }
         else {
             langUsed = "NA"

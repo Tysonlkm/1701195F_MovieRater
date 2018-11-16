@@ -8,9 +8,9 @@
     <string name="tml_lang">Tamil</string>
     <string name="my_lang">Malay</string>
     <string name="movieRelease">Release Date</string>
-    <string name="movieType">Not Suitable for all audiences</string>
+    <string name="movieType">Not Suitable for audiences</string>
     <string name="vl">violence</string>
-    <string name="langUsed">Language Used</string>
+    <string name="langUsed">Foul Language</string>
     <string name="btnText">ADD MOVIE</string>
     <string name="etMovieTitle">Enter the title of movie</string>
     <string name="etMovieDesc">Enter a short description of the movie</string>
