@@ -70,10 +70,10 @@ class MainActivity : AppCompatActivity() {
         }
         var movieRating=""
         if(chkboxMovieRating.isChecked){
-            movieRating = "true"
+            movieRating = "false"
         }
         else{
-            movieRating="false"
+            movieRating="true"
         }
 
         var vl =" "
@@ -105,10 +105,10 @@ class MainActivity : AppCompatActivity() {
             val nextActivityShow = Timer()
             nextActivityShow.schedule(3500){
                 var movieRecommend =""
-                if (langUsed =="NA" && vl=="NA"){
-                    movieRecommend= "Yes"
+                if (movieRating=="true"){
+                    movieRecommend = "Yes"
                 }
-                else {
+                else{
                     movieRecommend="No"
                 }
                 val movieTitle = inputMovieName.text.toString()
