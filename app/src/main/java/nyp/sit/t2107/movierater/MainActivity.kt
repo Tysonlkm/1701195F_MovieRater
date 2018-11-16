@@ -4,6 +4,8 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import kotlin.concurrent.schedule
+import java.util.*
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,78 +29,87 @@ class MainActivity : AppCompatActivity() {
 
         btnText.setOnClickListener{
             val validateMovieName = inputMovieName.text
-            if (validateMovieName.isNullOrEmpty()) {
-                inputMovieName.error = "Field Empty"
-            }
-
             val validateMovieDesc = inputMovieDesc.text
-            if (validateMovieDesc.isNullOrEmpty()) {
+            val validateReleaseDate = inputReleaseDate.text
+            if (validateMovieName.isNullOrEmpty()) {
+
+                inputMovieName.error = "Field Empty"
+
+            }
+            if(validateMovieDesc.isNullOrEmpty()) {
                 inputMovieDesc.error = "Field Empty"
             }
-
-            val validateReleaseDate = inputReleaseDate.text
             if (validateReleaseDate.isNullOrEmpty()) {
                 inputReleaseDate.error = "Field Empty"
             }
+            displayMovie()
 
-            var movieLang = ""
-            if (english_radiobtn.isChecked){
-                movieLang = english_radiobtn.text.toString()
-            }
-            else if(chinese_radiobtn.isChecked){
-                movieLang = chinese_radiobtn.text.toString()
-            }
+        }
+    }
+    private fun displayMovie(){
+        var movieLang = ""
+        if (english_radiobtn.isChecked){
+            movieLang = english_radiobtn.text.toString()
+        }
+        else if(chinese_radiobtn.isChecked){
+            movieLang = chinese_radiobtn.text.toString()
+        }
 
-            else if(malay_radiobtn.isChecked){
-                movieLang = malay_radiobtn.text.toString()
-            }
-            else {
-                movieLang = tamil_radiobtn.text.toString()
-            }
-            var movieRating=""
-            if(chkboxMovieRating.isChecked){
-                movieRating = "true"
-            }
-            else {
-               movieRating = "false"
-            }
+        else if(malay_radiobtn.isChecked){
+            movieLang = malay_radiobtn.text.toString()
+        }
+        else if (tamil_radiobtn.isChecked) {
+            movieLang = tamil_radiobtn.text.toString()
+        }
+        else{
+            movieLang = ""
+        }
+        var movieRating=""
+        if(chkboxMovieRating.isChecked){
+            movieRating = "true"
+        }
+        else {
+            movieRating = ""
+        }
 
-            var vl =" "
-            if(chkboxMovieVl.isChecked){
-                vl = chkboxMovieVl.text.toString()
-            }
-            else{
-                vl = ""
-            }
+        var vl =" "
+        if(chkboxMovieVl.isChecked){
+            vl = chkboxMovieVl.text.toString()
+        }
+        else{
+            vl = ""
+        }
 
-            var langUsed = ""
-            if(chkboxMovielangUsed.isChecked){
-                langUsed = "Language"
-            }
-            else {
-                langUsed = ""
-            }
+        var langUsed = ""
+        if(chkboxMovielangUsed.isChecked){
+            langUsed = "Language"
+        }
+        else {
+            langUsed = ""
+        }
+        val title = "Title =" + inputMovieName.text
+        val Desc = "Overview =" + inputMovieDesc.text
+        val Date = "Release Date =" + inputReleaseDate.text
+        val Lang = "Language = " + movieLang
+        val Rating = "Suitable for all ages = " + movieRating
+        val toastMovie = Toast.makeText(this, title + "\n" + Desc + "\n" + Date + "\n" + Lang + "\n" + Rating + "\n" + "Reason: " + "\n" + vl + "\n" + langUsed, Toast.LENGTH_LONG)
+        toastMovie.show()
 
-            val title = "Title =" + inputMovieName.text
-            val Desc = "Overview =" + inputMovieDesc.text
-            val Date = "Release Date =" + inputReleaseDate.text
-            val Lang = "Language = " + movieLang
-            val Rating = "Suitable for all ages = " + movieRating
-
-            val toastMovie = Toast.makeText(this, title + "\n" + Desc + "\n" + Date + "\n" + Lang + "\n" + Rating + "\n" + "Reason: " + "\n" + vl + "\n" + langUsed, Toast.LENGTH_LONG)
-            toastMovie.show()
-
+        val nextActivity = Timer()
+        nextActivity.schedule(5000){
+            val movieRecommend = "Yes"
             val movieTitle = inputMovieName.text.toString()
             val movieDesc= inputMovieDesc.text.toString()
-            val movieRecommend = "Yes"
-            
+            val movieReleaseDate = inputReleaseDate.text.toString()
             val movieIntent = Intent(applicationContext, DisplayMovie::class.java)
             movieIntent.putExtra("movieTitle", movieTitle)
             movieIntent.putExtra("movieDesc", movieDesc)
-            movieIntent.putExtra("moveDate",inputReleaseDate.text.toString())
+            movieIntent.putExtra("movieReleaseDate",movieReleaseDate)
             movieIntent.putExtra("movieLang", movieLang)
             movieIntent.putExtra("movieRecommend",movieRecommend)
             startActivity(movieIntent)
         }
+
     }
+
 }

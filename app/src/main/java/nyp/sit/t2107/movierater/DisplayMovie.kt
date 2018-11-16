@@ -13,7 +13,7 @@ class DisplayMovie : AppCompatActivity() {
         val bundle: Bundle? = intent.extras
         val movieTitle = bundle!!.getString("movieTitle")
         val movieDesc = bundle!!.getString("movieDesc")
-        val movieDate = bundle!!.getString("movieDate")
+        val movieDate = bundle!!.getString("movieReleaseDate")
         val movieLan = bundle!!.getString("movieLang")
         val movieRecommend = bundle!!.getString("movieRecommend")
 
